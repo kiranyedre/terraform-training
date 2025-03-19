@@ -1,0 +1,21 @@
+policy "require_tags_on_rg" {
+ 
+  # Set enforcement level to soft-mandatory
+
+  enforcement_level = "soft-mandatory"
+ 
+  rule {
+
+    all resources as r {
+
+      r.type == "azurerm_resource_group" implies
+
+      length(keys(r.tags)) > 0
+
+    }
+
+  }
+
+}
+
+ 
