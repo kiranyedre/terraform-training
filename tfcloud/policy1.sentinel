@@ -1,21 +1,10 @@
-policy "require_tags_on_rg" {
+import "tfplan/v2" as tfplan
  
-  # Set enforcement level to soft-mandatory
-
-  enforcement_level = "soft-mandatory"
- 
-  rule {
-
-    all resources as r {
-
-      r.type == "azurerm_resource_group" implies
-
-      length(keys(r.tags)) > 0
-
+# Check if all resources have tags
+all_resources_have_tags = rule {
+    all tfplan.resources as resource_type, instances {
+        all instances as instance {
+            instance.applied contains "tags"
+        }
     }
-
-  }
-
 }
-
- 
