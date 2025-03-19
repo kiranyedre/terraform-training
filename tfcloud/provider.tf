@@ -4,7 +4,7 @@ terraform {
     organization = "saintgobain22"
 
     workspaces {
-      name = "project-w1"
+      name = "terraform-training"
     }
   }
 }
