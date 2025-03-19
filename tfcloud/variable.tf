@@ -2,15 +2,15 @@ variable "sid" {
   type = string
 
 }
-variable "tid" {
+variable "tenant_id" {
   type = string
 
 }
-variable "cid" {
+variable "client_id" {
   type = string
 
 }
-variable "cs" {
+variable "client_secret" {
   type = string
 
 }
