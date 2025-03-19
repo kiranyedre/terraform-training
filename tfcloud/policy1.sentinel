@@ -8,3 +8,6 @@ all_resources_have_tags = rule {
         }
     }
 }
+main = rule {
+    all_resources_have_tags
+}
