@@ -3,7 +3,9 @@ resource "azurerm_resource_group" "kiran-rg" {
   location = var.region
 
 }
-
+main = rule {
+    all_resources_have_tags
+}
 resource "azurerm_virtual_network" "vnet1" {
   name = "vnet_kiran"
   location = var.region
