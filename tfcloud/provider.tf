@@ -25,8 +25,8 @@ provider "azurerm" {
   }
 
   subscription_id = var.sid
-  tenant_id       = var.tid
-  client_id       = var.cid
-  client_secret   = var.cs
+  tenant_id       = var.tenant_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
 
 }
